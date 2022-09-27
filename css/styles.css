@@ -270,6 +270,8 @@ img {
 	transition: transform 250ms var(--timing-function), opacity 250ms var(--timing-function);
 	opacity: 1;
 
+	padding: 40px;
+
 	min-height: 581px;
 	min-width: 528px;
 
@@ -287,6 +289,12 @@ img {
 	pointer-events: none;
 }
 
+/*  Форма модального вікна */
+
+.icon {
+	fill: currentColor;
+}
+
 .close-button {
 	position: absolute;
 
@@ -300,10 +308,187 @@ img {
 	border-radius: 50%;
 	width: 30px;
 	height: 30px;
-	border: 1px solid #000000;
+	border: 1px solid var(--header-logo-color);
+
+	transition: color 250ms var(--timing-function), border 250ms var(--timing-function);
 }
 
-.modal-icon {
+.close-button:hover,
+.close-button:focus {
+	color: var(--brand-color);
+	border: 1px solid var(--brand-color);
+}
+
+.modal-title {
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 1.15;
+	text-align: center;
+
+	color: var(--main-color);
+}
+
+.modal-form {
+	width: 448px;
+	margin-top: 12px;
+}
+
+.form-section {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 10px;
+}
+
+.input {
+	width: 100%;
+	padding-top: 11px;
+	padding-bottom: 11px;
+	border: 1px solid;
+	border-color: rgba(33, 33, 33, 0.2);
+	border-radius: 4px;
+	transition: border-color 250ms var(--timing-function), fill 250ms var(--timing-function);
+}
+
+.input:hover,
+.input:focus {
+	border-color: var(--brand-color);
+}
+
+.input:focus-visible {
+	outline: 1px solid var(--brand-color);
+}
+
+.form-label {
+	margin-bottom: 4px;
+	text-align: left;
+	font-size: 12px;
+	line-height: 1.17;
+
+	letter-spacing: 0.01em;
+
+	color: var(--text-color);
+}
+
+.form-section textarea {
+	margin-bottom: 10px;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	padding-left: 16px;
+	border: 1px solid;
+	border-color: rgba(33, 33, 33, 0.2);
+	border-radius: 4px;
+	resize: none;
+	transition: border-color 250ms var(--timing-function);
+}
+
+.form-section textarea::placeholder {
+	color: rgba(117, 117, 117, 0.5);
+	font-size: 12px;
+	line-height: 1.16;
+	letter-spacing: 0.01em;
+}
+
+.form-section textarea:hover,
+.form-section textarea:focus {
+	border-color: var(--brand-color);
+}
+
+.form-section textarea:focus-visible {
+	outline: 1px solid var(--brand-color);
+}
+
+.form-input {
+	position: relative;
+}
+
+.form-input .icon {
+	position: absolute;
+	top: 50%;
+	left: 12px;
+	transform: translateY(-50%);
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+}
+
+.input:hover + .icon,
+.input:focus + .icon {
+	fill: var(--brand-color);
+	transition: fill 250ms var(--timing-function);
+}
+
+.form-section.section-checkbox {
+	margin-bottom: 30px;
+}
+
+.label-checkbox {
+	display: block;
+	position: relative;
+	text-align: center;
+}
+
+.modal-icon-check {
+	position: absolute;
+	top: 50%;
+	left: 15px;
+
+	transform: translateY(-50%);
+
+	transition: background-color 250ms var(--timing-function), border-color 250ms var(--timing-function);
+
+	border: 2px solid var(--main-color);
+	border-radius: 2px;
+
+	color: var(--additional-color);
+	fill: currentColor;
+}
+
+.check-input:checked ~ .modal-icon-check {
+	background-color: var(--brand-color);
+	border-color: var(--brand-color);
+}
+
+.check-label {
+	margin-left: 10px;
+	font-size: 14px;
+	line-height: 1.71;
+	color: var(--text-color);
+}
+
+.form-link {
+	position: relative;
+	color: var(--brand-color);
+}
+
+.form-link::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 1px;
+	width: 100%;
+	height: 1px;
+	background-color: var(--brand-color);
+}
+
+.button-send {
+	padding: 10px 52px;
+
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 1.88;
+
+	letter-spacing: 0.06em;
+
+	background-color: var(--brand-color);
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+	border-radius: 4px;
+	border-color: transparent;
+
+	color: var(--additional-color);
+}
+.button-send:hover,
+.button-send:focus {
+	background-color: #188ce8;
 }
 
 /* Наші переваги */
@@ -520,7 +705,7 @@ img {
 	border-radius: 4px;
 	border: 1px solid transparent;
 
-	transition-property: box-shadow, color, background;
+	transition-property: box-shadow, color, background-color;
 	transition-duration: 250ms;
 	transition-timing-function: var(--timing-function);
 }
@@ -532,7 +717,7 @@ img {
 
 	color: var(--additional-color);
 
-	background: var(--brand-color);
+	background-color: var(--brand-color);
 }
 
 .filter-button:hover,
@@ -569,7 +754,7 @@ img {
 }
 .portfolio-link .portfolio-description,
 .portfolio-link .portfolio-description {
-	transition-property: opacity 250ms var(--timing-function), transform 250ms var(--timing-function);
+	transition: opacity 250ms var(--timing-function), transform 250ms var(--timing-function);
 }
 
 .portfolio-link:hover .portfolio-description,
@@ -759,4 +944,9 @@ img {
 	letter-spacing: 0.06em;
 
 	color: var(--additional-color);
+}
+
+.form-signup-icon {
+	margin-left: 10px;
+	fill: currentColor;
 }

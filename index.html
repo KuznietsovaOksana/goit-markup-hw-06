@@ -64,11 +64,71 @@
           <button type="button" class="hero-button button" data-modal-open>Замовити послугу</button>
           <div class="backdrop is-hidden" data-modal>
             <div class="modal">
-              <button type="button" class="close-button" data-modal-close>
-                <svg class="modal-icon" width="11" height="11">
-                  <use href="./images/icons.svg#icon-vector"></use>
-                </svg>
-              </button>
+              <div class="modal-close-button">
+                <button type="button" class="close-button" data-modal-close>
+                  <svg class="modal-icon icon" width="11" height="11">
+                    <use href="./images/icons.svg#icon-vector"></use>
+                  </svg>
+                </button>
+              </div>
+              <p class="modal-title">Залиште свої дані, ми вам передзвонимо</p>
+              <form class="modal-form" autocomplete="off">
+                <div class="form-section section-name">
+                  <label for="name" class="form-label">Ім'я</label>
+                  <div class="form-input">
+                    <input class="input" type="text" name="name" id="name" placeholder=" " />
+                    <svg class="modal-icon-name icon" width="18" height="18">
+                      <use href="./images/icons.svg#icon-person"></use>
+                    </svg>
+                  </div>
+                </div>
+                <div class="form-section section-phone">
+                  <label for="phone" class="form-label">Телефон</label>
+                  <div class="form-input">
+                    <input class="input" type="tel" name="phone" id="phone" placeholder=" " />
+                    <svg class="modal-icon-phone icon" width="18" height="18">
+                      <use href="./images/icons.svg#icon-phone"></use>
+                    </svg>
+                  </div>
+                </div>
+                <div class="form-section section-mail">
+                  <label for="mail" class="form-label">Пошта</label>
+                  <div class="form-input">
+                    <input class="input" type="email" name="mail" id="mail" placeholder=" " />
+                    <svg class="modal-icon-mail icon" width="18" height="18">
+                      <use href="./images/icons.svg#icon-email"></use>
+                    </svg>
+                  </div>
+                </div>
+                <div class="form-section section-textarea">
+                  <label for="comment" class="form-label">Коментар</label>
+                  <textarea
+                    name="comment"
+                    id="comment"
+                    rows="7"
+                    placeholder="Введіть текст"
+                  ></textarea>
+                </div>
+                <div class="form-section section-checkbox">
+                  <label for="check" class="label-checkbox">
+                    <input
+                      class="check-input input visually-hidden"
+                      type="checkbox"
+                      name="check"
+                      id="check"
+                      value="agreement"
+                    />
+                    <span class="check-label"
+                      >Погоджуюся з розсилкою та приймаю
+                      <a href="#" class="form-link link"> Умови договору</a></span
+                    >
+                    <svg class="modal-icon-check icon" width="16" height="15">
+                      <use href="./images/icons.svg#icon-check"></use>
+                    </svg>
+                  </label>
+                </div>
+                <button type="submit" class="button-send">Відправити</button>
+              </form>
             </div>
           </div>
         </div>
@@ -432,7 +492,12 @@
             <label class="label-signup">
               <input type="email" name="email" placeholder="E-mail" />
             </label>
-            <button type="submit" class="footer-button">Підписатися</button>
+            <button type="submit" class="footer-button">
+              Підписатися
+              <svg class="form-signup-icon" width="24" height="24">
+                <use href="./images/icons.svg#icon-send"></use>
+              </svg>
+            </button>
           </form>
         </div>
       </div>
